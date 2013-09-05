@@ -12,6 +12,7 @@ define([
     tagName: 'li',
     template: JST['app/scripts/templates/wine-list-item.ejs'],
     render:function (eventName) {
+      console.log("WineListItemView:render");
       $(this.el).html(this.template(this.model.toJSON()));
       return this;
     }

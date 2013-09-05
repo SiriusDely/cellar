@@ -15,9 +15,11 @@ define([
       "wines/:id" : "wineDetails"
     },
     list:function () {
+      console.log("AppRouter:list");
+      self = this;
       this.wineList = new WinesCollection();
       this.wineListView = new WineListView({model:this.wineList});
-      this.wineList.fetch();
+      this.wineList.fetch({reset: true});
       $('#sidebar').html(this.wineListView.render().el);
     },
  

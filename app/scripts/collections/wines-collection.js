@@ -9,7 +9,7 @@ define([
 
   var WinesCollection = Backbone.Collection.extend({
     model: WineModel,
-    url: '../api/wines'
+    url: '/wines'
   });
 
   return WinesCollection;

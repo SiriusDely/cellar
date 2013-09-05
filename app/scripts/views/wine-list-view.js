@@ -14,10 +14,13 @@ define([
     template: JST['app/scripts/templates/wine-list.ejs'],
 
     initialize: function () {
+      console.log("WineListView:initialize");
       this.model.bind('reset', this.render, this);
     },
 
     render: function (eventName) {
+      console.log("WineListView:render");
+      console.log(this.model.models);
       _.each(this.model.models, function (wine) {
         $(this.el).append(new WineListItemView({model:wine}).render().el);
       }, this);
