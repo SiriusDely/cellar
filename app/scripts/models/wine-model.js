@@ -8,6 +8,14 @@ define([
 
   var WineModel = Backbone.Model.extend({
     defaults: {
+      'id': null,
+      'name': '',
+      'grapes': '',
+      'country': 'USA',
+      'region': 'California',
+      'year': '',
+      'description': '',
+      'picture': ''
     }
   });
 

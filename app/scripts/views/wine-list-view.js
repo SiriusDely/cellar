@@ -16,6 +16,10 @@ define([
     initialize: function () {
       console.log("WineListView:initialize");
       this.model.bind('reset', this.render, this);
+      var self = this;
+      this.model.bind('add', function (wine) {
+        $(self.el).append(new WineListItemView({model:wine}).render().el);
+      });
     },
 
     render: function (eventName) {
