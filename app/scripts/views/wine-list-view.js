@@ -20,7 +20,6 @@ define([
 
     render: function (eventName) {
       console.log("WineListView:render");
-      console.log(this.model.models);
       _.each(this.model.models, function (wine) {
         $(this.el).append(new WineListItemView({model:wine}).render().el);
       }, this);

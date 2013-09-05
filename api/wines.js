@@ -26,22 +26,11 @@ exports.findById = function(req, res) {
   });
 };
 
-exports.findByManager = function(req, res) {
-  var id = parseInt(req.params.id);
-  console.log('findByManager: ' + id);
-  db.collection('wines', function(err, collection) {
-    collection.find({'managerId': id}).toArray(function(err, items) {
-      console.log(items);
-      res.jsonp(items);
-    });
-  });
-};
-
 exports.findAll = function(req, res) {
-    var name = req.query["name"];
+  var name = req.query["name"];
   db.collection('wines', function(err, collection) {
     if (name) {
-      collection.find({"fullName": new RegExp(name, "i")}).toArray(function(err, items) {
+      collection.find({"name": new RegExp(name, "i")}).toArray(function(err, items) {
         res.jsonp(items);
       });
     } else {

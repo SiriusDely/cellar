@@ -23,7 +23,6 @@ app.configure( function() {
   app.use( express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
-app.get('/wines/:id/reports', api.findByManager);
 app.get('/wines/:id', api.findById);
 app.get('/wines', api.findAll);
 
